@@ -20,6 +20,8 @@
 
         "dnxcore50": {
             "dependencies": {
+                "System.Linq.Expressions": "4.0.11-beta-*",
+
                 "xunit.runner.dnx": "2.1.0-rc1-build204"
             }
         }

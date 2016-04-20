@@ -1,14 +1,14 @@
 ﻿{
     "version": "1.0.0-*",
     "title": "Linq.PropertyTranslator.Core",
-    "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
+    "description": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "summary": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "authors": [ "Peter Schuster", "Stef Heyenrath" ],
     "owners": [ "Stef Heyenrath" ],
     "copyright": "Stef Heyenrath @ 2016",
     "tags": [ "Linq", "Expression", "Expressions", "ExpressionVisitor", "EF", "Translation", "PropertyVisitor", "CompiledExpression", "Compiled" ],
-    "projectUrl": "https://github.com/StefH/System.Linq.Dynamic.Core",
-    "licenseUrl": "https://github.com/StefH/System.Linq.Dynamic.Core/blob/master/licence.txt",
+    "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
+    "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
     "releaseNotes": "Initial version for .net core",
 
     "dependencies": {
@@ -55,10 +55,6 @@
             "dependencies": {
                 "Microsoft.CSharp": "4.0.1-beta-*",
 
-                "System.Runtime": "4.0.21-beta-*",
-
-                "System.Linq": "4.0.1-beta-*",
-                "System.Linq.Expressions": "4.0.11-beta-*",
                 "System.Linq.Queryable": "4.0.1-beta-*"
             }
         }

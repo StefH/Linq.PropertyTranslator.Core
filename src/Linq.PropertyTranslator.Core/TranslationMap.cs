@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
+using JetBrains.Annotations;
+using Linq.PropertyTranslator.Core.Validation;
 #if !(DNXCORE50 || NETSTANDARD)
 using System.Runtime.Serialization;
 #endif
@@ -19,7 +21,7 @@ namespace Linq.PropertyTranslator.Core
         /// <summary>
         /// Instance of the default <see cref="TranslationMap"/>.
         /// </summary>
-        private static readonly TranslationMap defaultMap = new TranslationMap();
+        public static readonly TranslationMap DefaultMap = new TranslationMap();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TranslationMap" /> class.
@@ -41,15 +43,6 @@ namespace Linq.PropertyTranslator.Core
 #endif
 
         /// <summary>
-        /// Gets the instance of the default <see cref="TranslationMap"/>.
-        /// </summary>
-        /// <value>The default translation map.</value>
-        public static TranslationMap DefaultMap
-        {
-            get { return defaultMap; }
-        }
-
-        /// <summary>
         /// Adds a new expression for specified property to the map.
         /// </summary>
         /// <param name="property">The property.</param>
@@ -58,12 +51,15 @@ namespace Linq.PropertyTranslator.Core
         /// <exception cref="System.ArgumentException">On invalid property expression type (must be of type MemberExpression).</exception>
         /// <typeparam name="T">The object (e.g. entity) type.</typeparam>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public void Add<T, TResult>(Expression<Func<T, TResult>> property, CompiledExpression<T, TResult> compiledExpression, string language = "")
+        public void Add<T, TResult>([NotNull] Expression<Func<T, TResult>> property, [NotNull] CompiledExpression<T, TResult> compiledExpression, [NotNull] string language = "")
         {
-            var member = property.Body as MemberExpression;
+            Check.NotNull(property, nameof(property));
+            Check.NotNull(compiledExpression, nameof(compiledExpression));
+            Check.NotNull(language, nameof(language));
 
+            var member = property.Body as MemberExpression;
             if (member == null)
-                throw new ArgumentException("property body must be a MemberExpression.", "property");
+                throw new ArgumentException("property body must be a MemberExpression.", nameof(property));
 
             AddInternal(member.Member, compiledExpression, language);
         }
@@ -78,12 +74,15 @@ namespace Linq.PropertyTranslator.Core
         /// <exception cref="System.ArgumentException">On invalid property expression type (must be of type MemberExpression).</exception>
         /// <typeparam name="T">The object (e.g. entity) type.</typeparam>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public CompiledExpressionMap<T, TResult> Add<T, TResult>(Expression<Func<T, TResult>> property, Expression<Func<T, TResult>> expression, string language = "")
+        public CompiledExpressionMap<T, TResult> Add<T, TResult>([NotNull] Expression<Func<T, TResult>> property, [NotNull] Expression<Func<T, TResult>> expression, [NotNull] string language = "")
         {
-            var member = property.Body as MemberExpression;
+            Check.NotNull(property, nameof(property));
+            Check.NotNull(expression, nameof(expression));
+            Check.NotNull(language, nameof(language));
 
+            var member = property.Body as MemberExpression;
             if (member == null)
-                throw new ArgumentException("property body must be a MemberExpression.", "property");
+                throw new ArgumentException("property body must be a MemberExpression.", nameof(property));
 
             var compiledExpression = new CompiledExpression<T, TResult>(expression);
 
@@ -97,11 +96,13 @@ namespace Linq.PropertyTranslator.Core
         /// <returns></returns>
         /// <typeparam name="T">The object (e.g. entity) type.</typeparam>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public CompiledExpression<T, TResult> Get<T, TResult>(MethodBase method)
+        public CompiledExpression<T, TResult> Get<T, TResult>([NotNull] MethodBase method)
         {
+            Check.NotNull(method, nameof(method));
+
             CompiledExpression result;
 
-            if (TryGetValue(method, out result)) 
+            if (TryGetValue(method, out result))
             {
                 return result as CompiledExpression<T, TResult>;
             }
@@ -115,10 +116,10 @@ namespace Linq.PropertyTranslator.Core
         /// <param name="method">The method.</param>
         /// <param name="expression">The compiled expression.</param>
         /// <returns></returns>
-        public bool TryGetValue(MemberInfo method, out CompiledExpression expression)
+        public bool TryGetValue([NotNull] MemberInfo method, out CompiledExpression expression)
         {
-            if (method == null)
-                throw new ArgumentNullException("method");
+            Check.NotNull(method, nameof(method));
+            Check.NotNull(method.DeclaringType, nameof(method.DeclaringType));
 
             return TryGetValue(method, method.DeclaringType, out expression);
         }
@@ -130,13 +131,10 @@ namespace Linq.PropertyTranslator.Core
         /// <param name="baseType">When the quey was built against an interface you can specify the concrete type here (retrieved from node.Expression.Type!).</param>
         /// <param name="expression">The compiled expression.</param>
         /// <returns></returns>
-        public bool TryGetValue(MemberInfo method, Type baseType, out CompiledExpression expression)
+        public bool TryGetValue([NotNull] MemberInfo method, [NotNull] Type baseType, out CompiledExpression expression)
         {
-            if (method == null)
-                throw new ArgumentNullException("method");
-
-            if (baseType == null)
-                throw new ArgumentNullException("baseType");
+            Check.NotNull(method, nameof(method));
+            Check.NotNull(baseType, nameof(baseType));
 
             PropertyInfo property = baseType.GetProperty(method.Name.Replace("get_", string.Empty));
 
@@ -161,7 +159,7 @@ namespace Linq.PropertyTranslator.Core
 
             if (!ContainsKey(property))
             {
-                base.Add(property, new CompiledExpressionMap<T, TResult>());
+                Add(property, new CompiledExpressionMap<T, TResult>());
             }
 
             base[property].Add(language.ToUpperInvariant(), compiledExpression);

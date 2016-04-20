@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
+using Linq.PropertyTranslator.Core.Validation;
 
 #if (DNXCORE50 || NETSTANDARD)
 using System.Reflection;
@@ -18,12 +20,12 @@ namespace Linq.PropertyTranslator.Core
         /// <summary>
         /// Stack of bindings to visit.
         /// </summary>
-        private readonly Stack<KeyValuePair<ParameterExpression, Expression>> bindings = new Stack<KeyValuePair<ParameterExpression, Expression>>();
+        private readonly Stack<KeyValuePair<ParameterExpression, Expression>> _bindings = new Stack<KeyValuePair<ParameterExpression, Expression>>();
 
         /// <summary>
         /// Used <see cref="TranslationMap"/> for property mapping.
         /// </summary>
-        private readonly TranslationMap map;
+        private readonly TranslationMap _map;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyVisitor" /> class with default <see cref="TranslationMap"/>.
@@ -37,12 +39,11 @@ namespace Linq.PropertyTranslator.Core
         /// Initializes a new instance of the <see cref="PropertyVisitor" /> class.
         /// </summary>
         /// <param name="map">The translation map.</param>
-        public PropertyVisitor(TranslationMap map)
+        public PropertyVisitor([NotNull] TranslationMap map)
         {
-            if (map == null)
-                throw new ArgumentNullException("map");
+            Check.NotNull(map, nameof(map));
 
-            this.map = map;
+            _map = map;
         }
 
         /// <summary>
@@ -52,6 +53,8 @@ namespace Linq.PropertyTranslator.Core
         /// <returns></returns>
         protected override Expression VisitMember(MemberExpression node)
         {
+            Check.NotNull(node, nameof(node));
+
             CompiledExpression expression;
 
             // Ensure that all property mappings are registered (the usual way -> on object type)
@@ -63,8 +66,8 @@ namespace Linq.PropertyTranslator.Core
                 EnsureTypeInitialized(node.Expression.Type);
             }
 
-            if ((IsBuildOnInterface(node) && map.TryGetValue(node.Member, node.Expression.Type, out expression))
-                 || map.TryGetValue(node.Member, out expression))
+            if ((IsBuildOnInterface(node) && _map.TryGetValue(node.Member, node.Expression.Type, out expression))
+                 || _map.TryGetValue(node.Member, out expression))
             {
                 return VisitCompiledExpression(expression, node.Expression);
             }
@@ -84,7 +87,7 @@ namespace Linq.PropertyTranslator.Core
         /// <returns></returns>
         protected override Expression VisitParameter(ParameterExpression p)
         {
-            var pair = bindings.FirstOrDefault(b => b.Key == p);
+            var pair = _bindings.FirstOrDefault(b => b.Key == p);
 
             if (pair.Value != null)
             {
@@ -116,17 +119,15 @@ namespace Linq.PropertyTranslator.Core
         /// <returns></returns>
         private static bool IsBuildOnInterface(MemberExpression node)
         {
-            return node.Expression != null 
-                && node.Expression.Type != null 
-                && node.Expression.Type != node.Member.DeclaringType;
+            return node.Expression != null && node.Expression.Type != node.Member.DeclaringType;
         }
 
         private Expression VisitCompiledExpression(CompiledExpression compiledExpression, Expression expression)
         {
-            bindings.Push(new KeyValuePair<ParameterExpression, Expression>(compiledExpression.BaseExpression.Parameters.Single(), expression));
+            _bindings.Push(new KeyValuePair<ParameterExpression, Expression>(compiledExpression.BaseExpression.Parameters.Single(), expression));
 
             var result = Visit(compiledExpression.BaseExpression.Body);
-            bindings.Pop();
+            _bindings.Pop();
 
             return result;
         }

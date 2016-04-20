@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
+using JetBrains.Annotations;
+using Linq.PropertyTranslator.Core.Validation;
 
 namespace Linq.PropertyTranslator.Core
 {
@@ -13,31 +15,30 @@ namespace Linq.PropertyTranslator.Core
         /// <summary>
         /// The base expression.
         /// </summary>
-        private readonly Expression<Func<T, TResult>> expression;
+        private readonly Expression<Func<T, TResult>> _expression;
 
         /// <summary>
         /// The compiled expression.
         /// </summary>
-        private readonly Func<T, TResult> function;
+        private readonly Func<T, TResult> _function;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompiledExpression{T, TResult}" /> class.
         /// </summary>
         /// <param name="expression">The expression.</param>
-        public CompiledExpression(Expression<Func<T, TResult>> expression)
+        public CompiledExpression([NotNull] Expression<Func<T, TResult>> expression)
         {
-            this.expression = expression;
-            function = expression.Compile();
+            Check.NotNull(expression, nameof(expression));
+
+            _expression = expression;
+            _function = expression.Compile();
         }
 
         /// <summary>
         /// Gets the undelying lambda expression.
         /// </summary>
         /// <value>The lambda expression.</value>
-        internal override LambdaExpression BaseExpression
-        {
-            get { return expression; }
-        }
+        internal override LambdaExpression BaseExpression => _expression;
 
         /// <summary>
         /// Evaluates the compiled expression on the specified instance.
@@ -46,7 +47,7 @@ namespace Linq.PropertyTranslator.Core
         /// <returns>TResult</returns>
         public TResult Evaluate(T instance)
         {
-            return function(instance);
+            return _function(instance);
         }
     }
 }

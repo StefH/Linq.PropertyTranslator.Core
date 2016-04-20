@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using JetBrains.Annotations;
+using Linq.PropertyTranslator.Core.Validation;
 
 namespace Linq.PropertyTranslator.Core
 {
@@ -17,8 +19,11 @@ namespace Linq.PropertyTranslator.Core
         /// <param name="method">The method.</param>
         /// <returns>The result of the expression execution.</returns>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public static TResult Evaluate<TResult>(T instance, MethodBase method)
+        public static TResult Evaluate<TResult>([NotNull] T instance, [NotNull] MethodBase method)
         {
+            Check.NotNull(instance, nameof(instance));
+            Check.NotNull(method, nameof(method));
+
             return TranslationMap.DefaultMap.Get<T, TResult>(method).Evaluate(instance);
         }
 
@@ -28,8 +33,10 @@ namespace Linq.PropertyTranslator.Core
         /// <param name="property">The property wrapper.</param>
         /// <returns></returns>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public static IncompletePropertyTranslation<TResult> Property<TResult>(Expression<Func<T, TResult>> property)
+        public static IncompletePropertyTranslation<TResult> Property<TResult>([NotNull] Expression<Func<T, TResult>> property)
         {
+            Check.NotNull(property, nameof(property));
+
             return new IncompletePropertyTranslation<TResult>(property);
         }
 
@@ -38,13 +45,17 @@ namespace Linq.PropertyTranslator.Core
         /// </summary>
         /// <param name="property">The property.</param>
         /// <param name="expression">The expression.</param>
-        /// <param name="language">The ui culture (e.g. "de", "en", etc.).</param>
+        /// <param name="language">The ui culture (e.g. "nl", "en", etc.).</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentException">On invalid property expression type (must be of type MemberExpression).</exception>
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-        public static CompiledExpressionMap<T, TResult> Property<TResult>(Expression<Func<T, TResult>> property, Expression<Func<T, TResult>> expression, string language = "")
+        public static CompiledExpressionMap<T, TResult> Property<TResult>([NotNull] Expression<Func<T, TResult>> property, [NotNull] Expression<Func<T, TResult>> expression, [NotNull] string language = "")
         {
-            return TranslationMap.DefaultMap.Add<T, TResult>(property, expression, language);
+            Check.NotNull(property, nameof(property));
+            Check.NotNull(expression, nameof(expression));
+            Check.NotNull(language, nameof(language));
+
+            return TranslationMap.DefaultMap.Add(property, expression, language);
         }
 
         /// <summary>
@@ -53,7 +64,7 @@ namespace Linq.PropertyTranslator.Core
         /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
         public class IncompletePropertyTranslation<TResult>
         {
-            private readonly Expression<Func<T, TResult>> property;
+            private readonly Expression<Func<T, TResult>> _property;
 
             /// <summary>
             /// Initializes a new instance of the <see cref="IncompletePropertyTranslation{TResult}" /> class.
@@ -61,7 +72,7 @@ namespace Linq.PropertyTranslator.Core
             /// <param name="property">The property.</param>
             internal IncompletePropertyTranslation(Expression<Func<T, TResult>> property)
             {
-                this.property = property;
+                _property = property;
             }
 
             /// <summary>
@@ -75,7 +86,7 @@ namespace Linq.PropertyTranslator.Core
             {
                 try
                 {
-                    return DefaultTranslationOf<T>.Property<TResult>(property, expression, language);
+                    return Property(_property, expression, language);
                 }
                 catch (ArgumentException exception)
                 {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8413BC9-B437-45D7-AEF1-0A951D4772B3}"
 EndProject
@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE8049D6-2FF3-4C58-9F7D-F06E40F916A8}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test-examples", "test-examples", "{3A098621-4C73-470D-867B-C899FE2162E0}"

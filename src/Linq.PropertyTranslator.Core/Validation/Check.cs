@@ -42,10 +42,7 @@ namespace Linq.PropertyTranslator.Core.Validation
         }
 
         [ContractAnnotation("value:null => halt")]
-        public static T NotNull<T>(
-            [NoEnumeration] T value,
-            [InvokerParameterName] [NotNull] string parameterName,
-            [NotNull] string propertyName)
+        public static T NotNull<T>([NoEnumeration] T value, [InvokerParameterName] [NotNull] string parameterName, [NotNull] string propertyName)
         {
             if (ReferenceEquals(value, null))
             {
