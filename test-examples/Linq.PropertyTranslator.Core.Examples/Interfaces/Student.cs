@@ -1,4 +1,7 @@
-﻿namespace Linq.PropertyTranslator.Core.Examples.Interfaces
+﻿using Linq.PropertyTranslator.Core;
+using Linq.PropertyTranslator.Core.Examples.Interfaces;
+
+namespace Linq.PropertyTranslator.Examples.Interfaces
 {
     public class Student : IPerson
     {

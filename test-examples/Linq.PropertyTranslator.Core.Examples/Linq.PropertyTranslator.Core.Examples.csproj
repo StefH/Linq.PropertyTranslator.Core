@@ -8,8 +8,8 @@
     <ProjectGuid>{0AF89103-99DF-43ED-BEDE-3686DD3E44C1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Linq.PropertyTranslator.Examples</RootNamespace>
-    <AssemblyName>Linq.PropertyTranslator.Examples</AssemblyName>
+    <RootNamespace>Linq.PropertyTranslator.Core.Examples</RootNamespace>
+    <AssemblyName>Linq.PropertyTranslator.Core.Examples</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

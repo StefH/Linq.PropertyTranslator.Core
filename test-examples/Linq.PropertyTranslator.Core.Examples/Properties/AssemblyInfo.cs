@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Linq.PropertyTranslator.Examples")]
+[assembly: AssemblyTitle("Linq.PropertyTranslator.Core.Examples")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Linq.PropertyTranslator.Examples")]
+[assembly: AssemblyProduct("Linq.PropertyTranslator.Core.Examples")]
 [assembly: AssemblyCopyright("Copyright © Stef Heyenrath 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
