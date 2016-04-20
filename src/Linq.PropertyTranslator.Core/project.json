@@ -1,8 +1,8 @@
 ﻿{
     "version": "1.0.0-*",
     "title": "Linq.PropertyTranslator.Core",
-    "description": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
-    "summary": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
+    "summary": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
+    "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "authors": [ "Peter Schuster", "Stef Heyenrath" ],
     "owners": [ "Stef Heyenrath" ],
     "copyright": "Stef Heyenrath @ 2016",
@@ -17,39 +17,18 @@
 
     "frameworks": {
         "net40": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "net45": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "net451": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "net452": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "net461": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "dnx451": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "dnx452": {
-            "frameworkAssemblies": {
-                "System.Data.Entity": ""
-            }
         },
         "dnxcore5": {
             "dependencies": {
