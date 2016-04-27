@@ -1,4 +1,6 @@
-## PropertyTranslator
+## Linq.PropertyTranslator.Core
+
+[![Build status](https://ci.appveyor.com/api/projects/status/u6qabmbi56bf4nhi?svg=true)](https://ci.appveyor.com/project/StefH/linq-propertytranslator-core)
 
 This is a **.net Core port** of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
 
