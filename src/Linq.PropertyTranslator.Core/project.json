@@ -1,5 +1,5 @@
 ﻿{
-    "version": "1.0.0-*",
+    "version": "1.0.1-*",
     "title": "Linq.PropertyTranslator.Core",
     "summary": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
@@ -9,10 +9,16 @@
     "tags": [ "Linq", "Expression", "Expressions", "ExpressionVisitor", "EF", "Translation", "PropertyVisitor", "CompiledExpression", "Compiled" ],
     "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
     "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
-    "releaseNotes": "Initial version for .net core",
+    "releaseNotes": "Change JetBrains.Annotations to build-dependency",
+
+    "compilationOptions": {
+    },
 
     "dependencies": {
-        "JetBrains.Annotations": "10.1.4"
+        "JetBrains.Annotations": {
+            "version": "10.1.4",
+            "type": "build"
+        }
     },
 
     "frameworks": {
