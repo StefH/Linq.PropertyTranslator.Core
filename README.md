@@ -1,6 +1,9 @@
 ## Linq.PropertyTranslator.Core
 
 [![Build status](https://ci.appveyor.com/api/projects/status/u6qabmbi56bf4nhi?svg=true)](https://ci.appveyor.com/project/StefH/linq-propertytranslator-core)
+<a href="https://scan.coverity.com/projects/stefh-linq-propertytranslator-core">
+<img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/8709/badge.svg"/>
+</a>
 
 This is a **.net Core port** of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
 
