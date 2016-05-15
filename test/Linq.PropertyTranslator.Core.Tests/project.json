@@ -5,9 +5,9 @@
             "type": "platform",
             "version": "1.0.0-rc2-*"
         },
-        "Linq.PropertyTranslator.Core": "1.0.1-*",
+        "Linq.PropertyTranslator.Core": { "target": "project" },
 
-        "QueryInterceptor.Core": "1.0.1",
+        "QueryInterceptor.Core": "1.0.2",
 
         "xunit": "2.1.0-rc2-*",
         "dotnet-test-xunit": "1.0.0-rc2-*"
