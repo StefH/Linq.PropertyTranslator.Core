@@ -5,7 +5,7 @@
             "type": "platform",
             "version": "1.0.0-rc2-*"
         },
-        "Linq.PropertyTranslator.Core": "1.0.2-*",
+        "Linq.PropertyTranslator.Core": "1.0.1-*",
 
         "QueryInterceptor.Core": "1.0.1",
 
