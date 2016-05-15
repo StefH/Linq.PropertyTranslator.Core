@@ -1,5 +1,5 @@
 ﻿using System;
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
 using System.Runtime.Serialization;
 #endif
 
@@ -10,7 +10,7 @@ namespace Linq.PropertyTranslator.Core
     /// </summary>
     /// <typeparam name="T">The object (e.g. entity) type.</typeparam>
     /// <typeparam name="TResult">Type of the result of the expression.</typeparam>
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
     [Serializable]
 #endif
     public class CompiledExpressionMap<T, TResult> : CompiledExpressionMap
@@ -22,7 +22,7 @@ namespace Linq.PropertyTranslator.Core
         {
         }
 
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
         /// <summary>
         /// Initializes a new instance of the <see cref="CompiledExpressionMap{T, TResult}" /> class.
         /// </summary>

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using JetBrains.Annotations;
 using Linq.PropertyTranslator.Core.Validation;
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
 using System.Runtime.Serialization;
 #endif
 
@@ -13,7 +13,7 @@ namespace Linq.PropertyTranslator.Core
     /// <summary>
     /// Map for property translations.
     /// </summary>
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
     [Serializable]
 #endif
     public class TranslationMap : Dictionary<MemberInfo, CompiledExpressionMap>
@@ -30,7 +30,7 @@ namespace Linq.PropertyTranslator.Core
         {
         }
 
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
         /// <summary>
         /// Initializes a new instance of the <see cref="TranslationMap" /> class.
         /// </summary>

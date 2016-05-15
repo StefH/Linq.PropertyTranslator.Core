@@ -11,8 +11,12 @@ The following frameworks are supported:
 - net40
 - net45x
 - net46x
-- dnxcore45x
+- dnx451
+- netcore45
 - dnxcore50
+- netstandard1.3
+- netstandard1.4
+- netstandard1.5
 
 
 Translates computed properties in LINQ queries into their implementation (based on [Microsoft.Linq.Translations](https://github.com/damieng/Linq.Translations)). 

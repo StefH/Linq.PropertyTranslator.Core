@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
 using System.Runtime.Serialization;
 #endif
 
@@ -11,7 +11,7 @@ namespace Linq.PropertyTranslator.Core
     /// <summary>
     /// Collection of <see cref="CompiledExpression"/>s for different UiCultures.
     /// </summary>
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
     [Serializable]
 #endif
     public class CompiledExpressionMap : Dictionary<string, CompiledExpression>
@@ -28,7 +28,7 @@ namespace Linq.PropertyTranslator.Core
         {
         }
 
-#if !(DNXCORE50 || NETSTANDARD)
+#if !(DNXCORE50 || NETSTANDARD || WINDOWS_APP)
         /// <summary>
         /// Initializes a new instance of the <see cref="CompiledExpressionMap" /> class.
         /// </summary>
