@@ -9,6 +9,10 @@
         "summary": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
         "owners": [ "Stef Heyenrath" ],
         "tags": [ "Linq", "Expression", "Expressions", "ExpressionVisitor", "EF", "Translation", "PropertyVisitor", "CompiledExpression", "Compiled" ],
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/StefH/Linq.PropertyTranslator.Core"
+        },
         "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
         "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
         "releaseNotes": "Add netstandard"
