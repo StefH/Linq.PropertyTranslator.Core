@@ -37,15 +37,6 @@
         },
         "dnx451": {
         },
-        "netcore45": {
-            "buildOptions": { "define": [ "WINDOWS_APP" ] },
-            "dependencies": {
-                "System.Linq.Queryable": "4.0.0",
-                "System.Linq.Expressions": "4.0.10",
-                "System.Collections": "4.0.10",
-                "System.Collections.Concurrent": "4.0.10"
-            }
-        },
         "dnxcore5": {
             "dependencies": {
                 "Microsoft.CSharp": "4.0.1-beta-*",
