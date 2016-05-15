@@ -1,6 +1,3 @@
 {
-    "projects": [ "src", "test", "test-examples" ],
-    "sdk": {
-        "version": "1.0.0-rc1-update2"
-    }
+    "projects": [ "src", "test", "test-examples" ]
 }

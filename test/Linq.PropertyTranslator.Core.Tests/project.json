@@ -2,7 +2,7 @@
     "version": "1.0.0-*",
 
     "dependencies": {
-        "Linq.PropertyTranslator.Core": "1.0.1-*",
+        "Linq.PropertyTranslator.Core": "1.0.2-*",
         "QueryInterceptor.Core": "1.0.2",
 
         "xunit": "2.1.0",
@@ -14,7 +14,7 @@
     },
 
     "frameworks": {
-        "dnx452": {
+        "dnx451": {
             "dependencies": {
             }
         },

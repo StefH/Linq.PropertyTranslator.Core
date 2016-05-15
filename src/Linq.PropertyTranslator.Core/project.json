@@ -1,17 +1,20 @@
 ﻿{
-    "version": "1.0.1-*",
+    "version": "1.0.2-*",
     "title": "Linq.PropertyTranslator.Core",
-    "summary": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "authors": [ "Peter Schuster", "Stef Heyenrath" ],
-    "owners": [ "Stef Heyenrath" ],
     "copyright": "Stef Heyenrath @ 2016",
-    "tags": [ "Linq", "Expression", "Expressions", "ExpressionVisitor", "EF", "Translation", "PropertyVisitor", "CompiledExpression", "Compiled" ],
-    "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
-    "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
-    "releaseNotes": "Change JetBrains.Annotations to build-dependency",
 
-    "compilationOptions": {
+    "packOptions": {
+        "summary": "Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
+        "owners": [ "Stef Heyenrath" ],
+        "tags": [ "Linq", "Expression", "Expressions", "ExpressionVisitor", "EF", "Translation", "PropertyVisitor", "CompiledExpression", "Compiled" ],
+        "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
+        "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
+        "releaseNotes": "Add netstandard"
+    },
+
+    "buildOptions": {
     },
 
     "dependencies": {
@@ -34,13 +37,38 @@
         },
         "dnx451": {
         },
-        "dnx452": {
-        },
         "dnxcore5": {
             "dependencies": {
                 "Microsoft.CSharp": "4.0.1-beta-*",
 
                 "System.Linq.Queryable": "4.0.1-beta-*"
+            }
+        },
+        "netstandard1.5": {
+            "buildOptions": { "define": [ "NETSTANDARD" ] },
+            "NETStandard.Library": {
+                "version": "1.5.0-rc2-*"
+            },
+            "imports": [
+                "dotnet5.5",
+                "portable-win81+wp81",
+                "portable-net45+wp8",
+                "portable-net45+win8+wp8",
+                "portable-wp81+wpa81",
+                "portable-win81+wp81+wpa81",
+                "portable-net45+win8+wpa81+wp8",
+                "portable-net45+win8",
+                "portable-net45+win8+wpa81",
+                "portable-win81+wpa81",
+                "portable-net451+win81",
+                "portable-net451+win81+wpa81"
+            ],
+            "dependencies": {
+                "System.Globalization": "4.0.11-rc2-*",
+
+                "System.Reflection.TypeExtensions": "4.1.0-rc2-*",
+
+                "System.Linq.Queryable": "4.0.1-rc2-*"
             }
         }
     }
