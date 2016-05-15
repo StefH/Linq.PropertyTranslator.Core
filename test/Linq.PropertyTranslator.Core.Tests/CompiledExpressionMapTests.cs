@@ -15,7 +15,7 @@ namespace Linq.PropertyTranslator.Core.Tests
         {
 
 
-#if DNXCORE50
+#if NETSTANDARD
             oldUiCulture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 
             CultureInfo.CurrentUICulture = new CultureInfo(ContextUiCulture);
@@ -110,7 +110,7 @@ namespace Linq.PropertyTranslator.Core.Tests
 
         public void Dispose()
         {
-#if DNXCORE50
+#if NETSTANDARD
             CultureInfo.CurrentUICulture = new CultureInfo(oldUiCulture);
 #else
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(oldUiCulture);

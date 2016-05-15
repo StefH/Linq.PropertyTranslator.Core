@@ -19,8 +19,11 @@ environment:
 
 build_script:
 - appveyor-retry dotnet restore -v Minimal
-- dotnet build .\src\Linq.PropertyTranslator.Core\project.json -c %CONFIGURATION%
+- dotnet build **\project.json -c %CONFIGURATION%
 - dotnet pack -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o .\artifacts .\src\Linq.PropertyTranslator.Core\project.json
+
+test_script:
+- dotnet test -c %CONFIGURATION% --no-build .\test\Linq.PropertyTranslator.Core.Tests
 
 artifacts:
 - path: artifacts\**\*.*
