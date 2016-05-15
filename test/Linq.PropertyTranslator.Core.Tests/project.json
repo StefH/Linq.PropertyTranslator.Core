@@ -7,7 +7,7 @@
         },
         "Linq.PropertyTranslator.Core": "1.0.2-*",
 
-        "QueryInterceptor.Core": "1.0.2",
+        "QueryInterceptor.Core": "1.0.1",
 
         "xunit": "2.1.0-rc2-*",
         "dotnet-test-xunit": "1.0.0-rc2-*"
