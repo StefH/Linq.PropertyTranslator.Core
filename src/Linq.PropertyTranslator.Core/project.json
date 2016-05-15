@@ -1,5 +1,5 @@
 ﻿{
-    "version": "1.0.2-*",
+    "version": "1.0.1-*",
     "title": "Linq.PropertyTranslator.Core",
     "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "authors": [ "Peter Schuster", "Stef Heyenrath" ],
