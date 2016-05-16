@@ -9,9 +9,7 @@ using JetBrains.Annotations;
 // Copied from https://github.com/aspnet/EntityFramework/blob/dev/src/Shared/Check.cs
 namespace Linq.PropertyTranslator.Core.Validation
 {
-#if !(NETSTANDARD)
     [DebuggerStepThrough]
-#endif
     internal static class Check
     {
         [ContractAnnotation("value:null => halt")]
