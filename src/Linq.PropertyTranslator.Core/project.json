@@ -28,10 +28,6 @@
         }
     },
 
-    "scripts": {
-        "postcompile": [ "dotnet pack --no-build --version-suffix %project:Version% project.json" ]
-    },
-
     "frameworks": {
         "net40": {
         },
