@@ -9,10 +9,11 @@ This is a **.net Core port** of the PropertyTranslator (https://github.com/pesch
 
 The following frameworks are supported:
 - net40
-- net45x
-- net46x
-- dnx451
-- dnxcore50
+- net45
+- net451
+- net452
+- net46
+- net461
 - netstandard1.3
 - netstandard1.4
 - netstandard1.5

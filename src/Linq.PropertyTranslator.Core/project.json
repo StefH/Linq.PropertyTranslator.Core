@@ -1,5 +1,5 @@
 ﻿{
-    "version": "1.0.2-*",
+    "version": "1.0.3.0",
     "title": "Linq.PropertyTranslator.Core",
     "description": "[.net core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).",
     "authors": [ "Peter Schuster", "Stef Heyenrath" ],
@@ -15,7 +15,7 @@
         },
         "projectUrl": "https://github.com/StefH/Linq.PropertyTranslator.Core",
         "licenseUrl": "https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE",
-        "releaseNotes": ""
+        "releaseNotes": "Update project to the latests .NET Core RTM"
     },
 
     "buildOptions": {
@@ -37,21 +37,12 @@
         },
         "net452": {
         },
+        "net46": {
+        },
         "net461": {
-        },
-        "dnx451": {
-        },
-        "dnxcore5": {
-            "dependencies": {
-                "Microsoft.CSharp": "4.0.1-beta-*",
-                "System.Linq.Queryable": "4.0.1-beta-*"
-            }
         },
         "netstandard1.3": {
             "buildOptions": { "define": [ "NETSTANDARD" ] },
-            "NETStandard.Library": {
-                "version": "1.5.0-rc2-*"
-            },
             "imports": [
                 "dotnet5.4",
                 "portable-win81+wp81",
@@ -67,17 +58,14 @@
                 "portable-net451+win81+wpa81"
             ],
             "dependencies": {
-                "System.Diagnostics.Debug": "4.0.11-rc2-*",
-                "System.Globalization": "4.0.11-rc2-*",
-                "System.Linq.Queryable": "4.0.1-rc2-*",
-                "System.Reflection.TypeExtensions": "4.1.0-rc2-*"
+                "System.Diagnostics.Debug": "4.0.11",
+                "System.Globalization": "4.0.11",
+                "System.Linq.Queryable": "4.0.1",
+                "System.Reflection.TypeExtensions": "4.1.0"
             }
         },
         "netstandard1.4": {
             "buildOptions": { "define": [ "NETSTANDARD" ] },
-            "NETStandard.Library": {
-                "version": "1.5.0-rc2-*"
-            },
             "imports": [
                 "dotnet5.5",
                 "portable-win81+wp81",
@@ -93,17 +81,14 @@
                 "portable-net451+win81+wpa81"
             ],
             "dependencies": {
-                "System.Diagnostics.Debug": "4.0.11-rc2-*",
-                "System.Globalization": "4.0.11-rc2-*",
-                "System.Linq.Queryable": "4.0.1-rc2-*",
-                "System.Reflection.TypeExtensions": "4.1.0-rc2-*"
+                "System.Diagnostics.Debug": "4.0.11",
+                "System.Globalization": "4.0.11",
+                "System.Linq.Queryable": "4.0.1",
+                "System.Reflection.TypeExtensions": "4.1.0"
             }
         },
         "netstandard1.5": {
             "buildOptions": { "define": [ "NETSTANDARD" ] },
-            "NETStandard.Library": {
-                "version": "1.5.0-rc2-*"
-            },
             "imports": [
                 "dotnet5.5",
                 "portable-win81+wp81",
@@ -119,10 +104,10 @@
                 "portable-net451+win81+wpa81"
             ],
             "dependencies": {
-                "System.Diagnostics.Debug": "4.0.11-rc2-*",
-                "System.Globalization": "4.0.11-rc2-*",
-                "System.Linq.Queryable": "4.0.1-rc2-*",
-                "System.Reflection.TypeExtensions": "4.1.0-rc2-*"
+                "System.Diagnostics.Debug": "4.0.11",
+                "System.Globalization": "4.0.11",
+                "System.Linq.Queryable": "4.0.1",
+                "System.Reflection.TypeExtensions": "4.1.0"
             }
         }
     }
