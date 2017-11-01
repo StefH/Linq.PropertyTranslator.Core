@@ -5,7 +5,7 @@
 <img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/8709/badge.svg"/>
 </a>
 
-This is a **.net Core port** of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
+This is a **.NET Core port** of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
 
 The following frameworks are supported:
 - net40
@@ -13,10 +13,8 @@ The following frameworks are supported:
 - net451
 - net452
 - net46
-- net461
 - netstandard1.3
-- netstandard1.4
-- netstandard1.5
+- netstandard2.0
 
 
 Translates computed properties in LINQ queries into their implementation (based on [Microsoft.Linq.Translations](https://github.com/damieng/Linq.Translations)). 

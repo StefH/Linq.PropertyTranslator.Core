@@ -1,24 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8413BC9-B437-45D7-AEF1-0A951D4772B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{42027AA4-3CF5-46BD-A779-5BBD83CC4096}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Linq.PropertyTranslator.Core", "src\Linq.PropertyTranslator.Core\Linq.PropertyTranslator.Core.xproj", "{F257212B-CA3D-4B1D-AE5B-C0927D6F9E1C}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Linq.PropertyTranslator.Core.Tests", "test\Linq.PropertyTranslator.Core.Tests\Linq.PropertyTranslator.Core.Tests.xproj", "{4AAAF9B4-4EC1-4594-8479-B153ED188559}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE8049D6-2FF3-4C58-9F7D-F06E40F916A8}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test-examples", "test-examples", "{3A098621-4C73-470D-867B-C899FE2162E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq.PropertyTranslator.Core", "src\Linq.PropertyTranslator.Core\Linq.PropertyTranslator.Core.csproj", "{F257212B-CA3D-4B1D-AE5B-C0927D6F9E1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq.PropertyTranslator.Core.Tests", "test\Linq.PropertyTranslator.Core.Tests\Linq.PropertyTranslator.Core.Tests.csproj", "{4AAAF9B4-4EC1-4594-8479-B153ED188559}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq.PropertyTranslator.Core.Examples", "test-examples\Linq.PropertyTranslator.Core.Examples\Linq.PropertyTranslator.Core.Examples.csproj", "{0AF89103-99DF-43ED-BEDE-3686DD3E44C1}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -65,5 +64,8 @@ Global
 		{F257212B-CA3D-4B1D-AE5B-C0927D6F9E1C} = {E8413BC9-B437-45D7-AEF1-0A951D4772B3}
 		{4AAAF9B4-4EC1-4594-8479-B153ED188559} = {42027AA4-3CF5-46BD-A779-5BBD83CC4096}
 		{0AF89103-99DF-43ED-BEDE-3686DD3E44C1} = {3A098621-4C73-470D-867B-C899FE2162E0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D0622EE-60F8-489D-8E92-FD7C1AA0FF05}
 	EndGlobalSection
 EndGlobal
