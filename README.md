@@ -4,6 +4,7 @@
 <a href="https://scan.coverity.com/projects/stefh-linq-propertytranslator-core">
 <img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/8709/badge.svg"/>
 </a>
+[![Version](https://img.shields.io/nuget/v/Linq.PropertyTranslator.Core.svg)](https://www.nuget.org/packages/Linq.PropertyTranslator.Core)
 
 This is a **.NET Core port** of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
 
