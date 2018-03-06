@@ -1,3 +1,5 @@
+# 1.0.4.0 (11 November 2017)
+
  - [#2](https://github.com/StefH/Linq.PropertyTranslator.Core/issues/2) - Support NETStandard 2.0 +enhancement
  - [#1](https://github.com/StefH/Linq.PropertyTranslator.Core/issues/1) - Update project to the latests .NET Core RTM +enhancement
 
