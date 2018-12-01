@@ -25,7 +25,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
-    <AssemblyOriginatorKeyFile>Linq.PropertyTranslator.Core.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Linq.PropertyTranslator.Core.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
