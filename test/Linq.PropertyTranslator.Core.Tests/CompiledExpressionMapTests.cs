@@ -32,11 +32,7 @@ namespace Linq.PropertyTranslator.Core.Tests
             var target = new CompiledExpressionMap();
 
             bool expected = false;
-
-            bool actual;
-            CompiledExpression outExpression;
-
-            actual = target.TryGetValue(out outExpression);
+            bool actual = target.TryGetValue(out CompiledExpression outExpression);
 
             Assert.Equal(expected, actual);
             Assert.Null(outExpression);
@@ -56,11 +52,7 @@ namespace Linq.PropertyTranslator.Core.Tests
             target.Add(ContextUiCulture, expectedExpression);
 
             bool expected = true;
-
-            bool actual;
-            CompiledExpression outExpression;
-
-            actual = target.TryGetValue(out outExpression);
+            bool actual = target.TryGetValue(out CompiledExpression outExpression);
 
             Assert.Equal(expected, actual);
             Assert.Equal(expectedExpression, outExpression);
@@ -78,11 +70,7 @@ namespace Linq.PropertyTranslator.Core.Tests
             target.Add("anyKey", otherExpression);
 
             bool expected = true;
-
-            bool actual;
-            CompiledExpression outExpression;
-
-            actual = target.TryGetValue(out outExpression);
+            bool actual = target.TryGetValue(out CompiledExpression outExpression);
 
             Assert.Equal(expected, actual);
             Assert.Equal(expectedExpression, outExpression);
@@ -98,11 +86,7 @@ namespace Linq.PropertyTranslator.Core.Tests
             target.Add("AnyKey", expectedExpression);
 
             bool expected = true;
-
-            bool actual;
-            CompiledExpression outExpression;
-
-            actual = target.TryGetValue(out outExpression);
+            bool actual = target.TryGetValue(out CompiledExpression outExpression);
 
             Assert.Equal(expected, actual);
             Assert.Equal(expectedExpression, outExpression);
