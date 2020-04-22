@@ -3,5 +3,7 @@
     public interface IPerson
     {
         string DisplayName { get; }
+
+        double Sqrt { get; }
     }
 }

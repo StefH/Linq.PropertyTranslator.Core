@@ -11,7 +11,7 @@ namespace Linq.PropertyTranslator.Core.Examples
     {
         static void Main(string[] args)
         {
-            var persons = new IPerson[] { new Student { Name = "s-1", Id = "1234" }, new Teacher { Name = "t-1" } }.AsQueryable();
+            var persons = new IPerson[] { new Student { Name = "s-1", Id = "1234" }, new Teacher { Name = "t-1", Age = 2 } }.AsQueryable();
 
             var intercepted = persons.InterceptWith(new PropertyVisitor()).ToList();
             Console.WriteLine(JsonConvert.SerializeObject(intercepted, Formatting.Indented));
