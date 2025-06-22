@@ -1,6 +1,5 @@
-## Linq.PropertyTranslator.Core
+# Linq.PropertyTranslator.Core
 
-[![Build status](https://ci.appveyor.com/api/projects/status/u6qabmbi56bf4nhi?svg=true)](https://ci.appveyor.com/project/StefH/linq-propertytranslator-core)
 [![Version](https://img.shields.io/nuget/v/Linq.PropertyTranslator.Core.svg)](https://www.nuget.org/packages/Linq.PropertyTranslator.Core)
 
 This is a **.NET Core / .NET Standard** port of the PropertyTranslator (https://github.com/peschuster/PropertyTranslator).
@@ -103,3 +102,12 @@ public class MyDataContext
 ## How to use it
 PropertyTranslator is on Nuget: [http://nuget.org/packages/Linq.PropertyTranslator.Core](http://nuget.org/packages/Linq.PropertyTranslator.Core)
 I'd recommend to use it together with [QueryInterceptor.Core](http://nuget.org/packages/QueryInterceptor.Core) by Stef Heyenrath.
+
+
+## Sponsors
+
+[Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=StefH) and [Dapper Plus](https://dapper-plus.net/?utm_source=StefH) are major sponsors and proud to contribute to the development of **Linq.PropertyTranslator.Core**.
+
+[![Entity Framework Extensions](https://raw.githubusercontent.com/StefH/resources/main/sponsor/entity-framework-extensions-sponsor.png)](https://entityframework-extensions.net/bulk-insert?utm_source=StefH)
+
+[![Dapper Plus](https://raw.githubusercontent.com/StefH/resources/main/sponsor/dapper-plus-sponsor.png)](https://dapper-plus.net/bulk-insert?utm_source=StefH)

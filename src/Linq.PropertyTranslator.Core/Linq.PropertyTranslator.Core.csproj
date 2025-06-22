@@ -4,7 +4,7 @@
     <Description>[.NET Core version] : Translates computed properties in LINQ queries into their implementation (based on Microsoft.Linq.Translations).</Description>
     <Copyright>Stef Heyenrath</Copyright>
     <AssemblyTitle>Linq.PropertyTranslator.Core</AssemblyTitle>
-    <VersionPrefix>1.0.5.0</VersionPrefix>
+    <VersionPrefix>1.0.5.1</VersionPrefix>
     <Authors>Peter Schuster;Stef Heyenrath</Authors>
     <TargetFrameworks>net40;net45;net451;net452;net46;netstandard1.3;netstandard2.0</TargetFrameworks>
     <AssemblyName>Linq.PropertyTranslator.Core</AssemblyName>
@@ -12,7 +12,7 @@
     <PackageTags>Linq;Expression;Expressions;ExpressionVisitor;EF;Translation;PropertyVisitor;CompiledExpression;Compiled</PackageTags>
     <PackageReleaseNotes>See CHANGELOG.MD</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/StefH/Linq.PropertyTranslator.Core</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/Linq.PropertyTranslator.Core/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/StefH/Linq.PropertyTranslator.Core</RepositoryUrl>
     <DebugType>full</DebugType>
@@ -26,12 +26,18 @@
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>Linq.PropertyTranslator.Core.snk</AssemblyOriginatorKeyFile>
+    <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <PathMap>$(MSBuildProjectDirectory)=/</PathMap>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="../../PackageReadme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="10.4.0">

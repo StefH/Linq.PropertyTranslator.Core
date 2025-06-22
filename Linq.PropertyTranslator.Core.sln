@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8413BC9-B437-45D7-AEF1-0A951D4772B3}"
 EndProject
@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{42027AA4-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE8049D6-2FF3-4C58-9F7D-F06E40F916A8}"
 	ProjectSection(SolutionItems) = preProject
-		appveyor.yml = appveyor.yml
 		CHANGELOG.md = CHANGELOG.md
-		ChangeLog.txt = ChangeLog.txt
+		Generate-ReleaseNotes.bat = Generate-ReleaseNotes.bat
+		PackageReadme.md = PackageReadme.md
 		README.md = README.md
 	EndProjectSection
 EndProject
